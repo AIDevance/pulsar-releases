@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulsar VPN</title>
+<style>
+  :root { color-scheme: light dark; --bg: #fff; --fg: #1b1b1f; --muted: #5f6368; --accent: #3d5afe; --card: #f2f3f7; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #121317; --fg: #e8e8ec; --muted: #9aa0a6; --accent: #8c9eff; --card: #1d1f26; } }
+  body { margin: 0; padding: 24px 16px; background: var(--bg); color: var(--fg); font: 16px/1.5 system-ui, sans-serif; }
+  main { max-width: 480px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  p { color: var(--muted); margin: 0 0 16px; }
+  .pkg { display: block; padding: 14px 16px; margin: 0 0 8px; border-radius: 12px; background: var(--card); color: var(--fg); text-decoration: none; }
+  .pkg b { display: block; }
+  .pkg small { color: var(--muted); }
+  .pkg.main { background: var(--accent); color: #fff; }
+  .pkg.main small { color: #e6e9ff; }
+  .pkg[hidden] { display: none; }
+  h2 { font-size: 14px; margin: 24px 0 8px; color: var(--muted); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pulsar VPN</h1>
+  <p id="lead">Выберите пакет для вашей системы.</p>
+  <!-- Fixed names: releases/latest/download/<name> never goes stale (scripts/publish.sh). -->
+  <a class="pkg" data-os="android" href="https://github.com/AIDevance/pulsar-releases/releases/latest/download/Pulsar-VPN-arm64-v8a.apk"><b>Android</b><small>Pulsar-VPN-arm64-v8a.apk, Android 8+</small></a>
+  <a class="pkg" data-os="windows" href="https://github.com/AIDevance/pulsar-releases/releases/latest/download/Pulsar-VPN-windows-setup.exe"><b>Windows</b><small>Pulsar-VPN-windows-setup.exe, Windows 10/11</small></a>
+  <a class="pkg" data-os="linux" href="https://github.com/AIDevance/pulsar-releases/releases/latest/download/Pulsar-VPN-debian-amd64.deb"><b>Debian, Ubuntu</b><small>Pulsar-VPN-debian-amd64.deb</small></a>
+  <a class="pkg" data-os="linux" href="https://github.com/AIDevance/pulsar-releases/releases/latest/download/Pulsar-VPN-arch-x86_64.pkg.tar.zst"><b>Arch Linux</b><small>Pulsar-VPN-arch-x86_64.pkg.tar.zst</small></a>
+  <a class="pkg" data-os="linux" href="https://github.com/AIDevance/pulsar-releases/releases/latest/download/Pulsar-VPN-linux-x86_64.tar.gz"><b>Другой Linux</b><small>Pulsar-VPN-linux-x86_64.tar.gz, x86_64</small></a>
+  <h2><a href="https://github.com/AIDevance/pulsar-releases/releases/latest">Все сборки выпуска</a></h2>
+</main>
+<script>
+  // The system of whoever scanned the code: its package first, the rest as is.
+  (function () {
+    var ua = navigator.userAgent || '';
+    var os = /Android/i.test(ua) ? 'android' : /Windows/i.test(ua) ? 'windows' : /Linux|X11|CrOS/i.test(ua) ? 'linux' : '';
+    if (!os) return;
+    var names = { android: 'Android', windows: 'Windows', linux: 'Linux' };
+    document.getElementById('lead').textContent = 'Определена система: ' + names[os] + '.';
+    var list = document.querySelectorAll('.pkg');
+    var first = null;
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].getAttribute('data-os') === os) {
+        if (!first) first = list[i];
+        list[i].className += ' main';
+      } else {
+        list[i].hidden = true;
+      }
+    }
+    var more = document.createElement('a');
+    more.href = '#';
+    more.textContent = 'Другая система';
+    more.onclick = function () {
+      for (var j = 0; j < list.length; j++) { list[j].hidden = false; }
+      more.hidden = true;
+      return false;
+    };
+    document.querySelector('main').insertBefore(more, document.querySelector('h2'));
+  })();
+</script>
+</body>
+</html>
