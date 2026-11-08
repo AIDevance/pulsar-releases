@@ -3,7 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pulsar VPN</title>
+<title>Pulsar VPN — скачать VPN-клиент на Xray для Windows, Android и Linux</title>
+<!-- For search engines and link previews (owner decision 2026-11-08). The page is
+     both the QR-code landing and the product's public page; keep it one URL. -->
+<meta name="description" content="Pulsar VPN от AIDevance — VPN-клиент для Windows, Android и Linux на Xray-core: подписки VLESS, Reality, VMess, Trojan, Shadowsocks, автоматический выбор самого быстрого сервера, маршрутизация и блокировка трафика. Скачать бесплатно.">
+<link rel="canonical" href="https://aidevance.github.io/pulsar-releases/">
+<link rel="alternate" hreflang="ru" href="https://aidevance.github.io/pulsar-releases/">
+<link rel="alternate" hreflang="en" href="https://github.com/AIDevance/pulsar-releases#readme">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pulsar VPN">
+<meta property="og:title" content="Pulsar VPN — VPN-клиент на Xray для Windows, Android и Linux">
+<meta property="og:description" content="Подписки VLESS, Reality, VMess, Trojan, Shadowsocks; самый быстрый сервер выбирается сам; маршрутизация и блокировка трафика. От AIDevance.">
+<meta property="og:url" content="https://aidevance.github.io/pulsar-releases/">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Pulsar VPN",
+  "alternateName": "Pulsar Xray VPN",
+  "applicationCategory": "UtilitiesApplication",
+  "applicationSubCategory": "VPN client",
+  "operatingSystem": "Windows 10, Windows 11, Android 8+, Linux",
+  "description": "VPN client on Xray-core: VLESS (Reality), VMess, Trojan, Shadowsocks subscriptions, automatic fastest server, split tunneling, kill switch.",
+  "url": "https://aidevance.github.io/pulsar-releases/",
+  "downloadUrl": "https://github.com/AIDevance/pulsar-releases/releases/latest",
+  "softwareHelp": "https://github.com/AIDevance/pulsar-releases#readme",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Organization", "name": "AIDevance", "url": "https://github.com/AIDevance" }
+}
+</script>
 <style>
   :root { color-scheme: light dark; --bg: #fff; --fg: #1b1b1f; --muted: #5f6368; --accent: #3d5afe; --card: #f2f3f7; }
   @media (prefers-color-scheme: dark) { :root { --bg: #121317; --fg: #e8e8ec; --muted: #9aa0a6; --accent: #8c9eff; --card: #1d1f26; } }
@@ -18,6 +49,10 @@
   .pkg.main small { color: #e6e9ff; }
   .pkg[hidden] { display: none; }
   h2 { font-size: 14px; margin: 24px 0 8px; color: var(--muted); font-weight: 500; }
+  .about { margin-top: 32px; font-size: 14px; color: var(--muted); }
+  .about h3 { font-size: 14px; color: var(--fg); margin: 16px 0 4px; }
+  .about ul { padding-left: 18px; margin: 0 0 8px; }
+  .about a { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -31,6 +66,19 @@
   <a class="pkg" data-os="linux" href="https://github.com/AIDevance/pulsar-releases/releases/latest/download/Pulsar-VPN-arch-x86_64.pkg.tar.zst"><b>Arch Linux</b><small>Pulsar-VPN-arch-x86_64.pkg.tar.zst</small></a>
   <a class="pkg" data-os="linux" href="https://github.com/AIDevance/pulsar-releases/releases/latest/download/Pulsar-VPN-linux-x86_64.tar.gz"><b>Другой Linux</b><small>Pulsar-VPN-linux-x86_64.tar.gz, x86_64</small></a>
   <h2><a href="https://github.com/AIDevance/pulsar-releases/releases/latest">Все сборки выпуска</a></h2>
+  <section class="about">
+    <h3>Что такое Pulsar VPN</h3>
+    <p>VPN-клиент от AIDevance для Windows, Android и Linux, работает поверх Xray-core. Добавьте подписку своего VPN-провайдера или одну ссылку — Pulsar сам выберет самый быстрый сервер, проверит, что трафик действительно идёт через VPN, и перейдёт на другой сервер, если этот замедлится или откажет.</p>
+    <ul>
+      <li>Подписки и ссылки VLESS (в том числе Reality), VMess, Trojan, Shadowsocks; основные и резервные серверы.</li>
+      <li>«Работает» — только когда внешний адрес через VPN проверен.</li>
+      <li>Маршрутизация: локальная сеть и сайты своей страны напрямую, свои списки, выбранные приложения мимо VPN.</li>
+      <li>Блокировка трафика, когда VPN недоступен.</li>
+      <li>Обновление из программы: Настройки → «Проверить обновления».</li>
+    </ul>
+    <p>Подписку даёт ваш VPN-провайдер, в программу она не входит. <a href="https://github.com/AIDevance/pulsar-releases#readme">Подробнее и установка</a> · <a href="https://github.com/AIDevance/pulsar-releases/releases">Что нового</a></p>
+    <p lang="en">Pulsar VPN is a free VPN client for Windows, Android and Linux on Xray-core: VLESS, Reality, VMess, Trojan and Shadowsocks subscriptions, automatic fastest server, split tunneling and a kill switch. <a href="https://github.com/AIDevance/pulsar-releases#readme">Read more in English</a>.</p>
+  </section>
 </main>
 <script>
   // The system of whoever scanned the code: its package first, the rest as is.
