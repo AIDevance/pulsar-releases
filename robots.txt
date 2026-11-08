@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aidevance.github.io/pulsar-releases/sitemap.xml
